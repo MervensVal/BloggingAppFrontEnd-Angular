@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserserviceService } from 'src/app/services/userservice.service';
 import {User} from 'src/app/models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,7 @@ export class RegisterComponent implements OnInit {
   //   this.userInfo = {userId :'', firstName:'', lastName:'', emailAddress:'', password:''};
   // }
 
-  constructor(private userSvc:UserserviceService){
+  constructor(private userSvc:UserserviceService,private router:Router){
     this.userInfo = new User('','','','','',);
   }
 
@@ -30,11 +31,18 @@ export class RegisterComponent implements OnInit {
     if(this.userInfo!==null){
       this.userSvc.CreateUser(this.userInfo).subscribe((response)=>{
         this.success =true;
-        this.message= `The User ${response.userId} has been created!`
+        this.message= `The User ${response.userId} has been created!`;
+        
+        setTimeout(() =>{
+          this.router.navigate(['/login']);
+       }, 2000); //Time before execution
+       
       },(error)=>{
         this.success =false;
         this.message = error.error.messsage;
       })
     }
   }
+
+  
 }
