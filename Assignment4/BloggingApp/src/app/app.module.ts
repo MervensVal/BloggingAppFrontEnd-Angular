@@ -9,7 +9,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { HomeComponent } from './views/home/home.component';
 import { ErrorrouteComponent } from './views/errorroute/errorroute.component';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +17,14 @@ import { FormsModule } from '@angular/forms';
     RegisterComponent,
     NavbarComponent,
     HomeComponent,
-    ErrorrouteComponent
+    ErrorrouteComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
