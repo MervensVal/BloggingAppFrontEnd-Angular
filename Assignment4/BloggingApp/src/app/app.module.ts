@@ -10,6 +10,7 @@ import { HomeComponent } from './views/home/home.component';
 import { ErrorrouteComponent } from './views/errorroute/errorroute.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { PostcomponentComponent } from './views/postcomponent/postcomponent.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     HomeComponent,
     ErrorrouteComponent,
+    PostcomponentComponent,
   ],
   imports: [
     BrowserModule,
