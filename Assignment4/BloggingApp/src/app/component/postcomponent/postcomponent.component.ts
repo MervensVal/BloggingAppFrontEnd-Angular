@@ -25,9 +25,12 @@ export class PostcomponentComponent implements OnInit {
     private postSVC: PostserviceService
   ) {
     let userLoggedIn = this.userSvc.GetLoggedInUser();
-    if (userLoggedIn != null) {
+    if (userLoggedIn != null) 
+    {
       this.userIsLoggedIn = true;
       this.currentUser = userLoggedIn;
+      console.log("userLoggedIn != null!!!");
+
     }
     this.userSvc.UserStateChanged.subscribe((userLoggedInMsg) => {
       this.userIsLoggedIn = userLoggedInMsg !== null;
@@ -48,6 +51,7 @@ export class PostcomponentComponent implements OnInit {
         (error) => {
           this.success = false;
           this.message = error.error.messsage;
+          console.log("No luck!!!");
         }
       );
     }
