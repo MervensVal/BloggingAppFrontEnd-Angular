@@ -11,6 +11,7 @@ import { ErrorrouteComponent } from './views/errorroute/errorroute.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PostcomponentComponent } from './component/postcomponent/postcomponent.component';
+import { PostinstanceComponent } from './component/postinstance/postinstance.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { PostcomponentComponent } from './component/postcomponent/postcomponent.
     HomeComponent,
     ErrorrouteComponent,
     PostcomponentComponent,
+    PostinstanceComponent,
   ],
   imports: [
     BrowserModule,

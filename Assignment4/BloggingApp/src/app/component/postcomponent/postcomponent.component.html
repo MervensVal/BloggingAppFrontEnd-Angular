@@ -1,20 +1,24 @@
-<div *ngIf="userIsLoggedIn">
-    <h1 class="text-center mt-1">Create a Post!</h1>
-    <div class="container p-3  mt-1 ">
-        <div class="form-group">
-            <label for="postTitle"> Title</label>
-            <input type="text" class="form-control" id="postTitle" placeholder="Enter title of post">
-        </div>
-        <div class="form-group">
-            <label for="headerImage"> Header Image URL</label>
-            <input type="text" class="form-control" id="headerImage" placeholder="Enter URL for image">
-        </div>
-        <div class="form-group">
-            <textarea type="text" rows="6" style="resize: none;" class="form-control" id="headerImage"
-                placeholder="Write a post"></textarea>
-        </div>
-        <div>
-            <button class="btn btn-success">Submit</button>
-        </div>
+<h1 class="text-center mt-1">Create a Post!</h1>
+<div class="container p-3  mt-1 ">
+    <div class="form-group">
+        <label for="postTitle"> Title</label>
+        <input [(ngModel)]="postInfo!.title" type="text" class="form-control" id="postTitle"
+            placeholder="Enter title of post">
+    </div>
+    <div class="form-group">
+        <label for="headerImage"> Header Image URL</label>
+        <input [(ngModel)]="postInfo!.headerImage" type="text" class="form-control" id="headerImage"
+            placeholder="Enter URL for image">
+    </div>
+    <div class="form-group">
+        <textarea [(ngModel)]="postInfo!.content" type="text" rows="6" style="resize: none;" class="form-control"
+            id="content" placeholder="Write a post"></textarea>
+    </div>
+    <div *ngIf="message !=='' " class="alert" [ngClass]="{'alert-danger':!success, 'alert-success': success}"
+        role="alert">
+        {{message}}
+    </div>
+    <div>
+        <button (click)="CreatePosts()" class="btn btn-success">Create</button>
     </div>
 </div>
