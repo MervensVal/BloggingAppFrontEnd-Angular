@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/home']);
       }, (error)=>{
         this.success=false;
-        this.message =error.error.message;
+        this.message = "User does not exist";
       })
     }
   }
